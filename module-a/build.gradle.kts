@@ -1,10 +1,12 @@
 plugins {
     id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
-    kotlin("plugin.jpa") version "1.9.24"
-    kotlin("jvm") version "1.9.24"
-    kotlin("plugin.spring") version "1.9.24"
-//    id("java-test-fixtures")
+    val kotlinVersion = "1.9.20" // when this version then does not work
+//    val kotlinVersion = "1.9.10" // when this version then does work well
+    kotlin("plugin.jpa") version kotlinVersion
+    kotlin("jvm") version kotlinVersion
+    kotlin("plugin.spring") version kotlinVersion
+    id("java-test-fixtures") // when test fixtures plugin disabled then works
 }
 
 group = "com.example"
